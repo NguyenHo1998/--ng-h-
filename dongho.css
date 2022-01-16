@@ -1,0 +1,137 @@
+body{
+    background-color: teal;
+}
+.clock{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border-color: black;
+    margin: auto;
+    margin-top: 150px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: url(https://meta.vn/Data/image/2021/09/25/hinh-nen-dien-thoai-3d-3.png);
+}
+.center{
+    background-color: white;
+    position:absolute;
+    left: calc(50%-10px);
+    right: calc(50%-10px);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 20;
+
+}
+.red-center{
+    width: 8px;
+    height: 8px;
+    z-index: 30;
+    background-color: red;
+    left: calc(50%-4px);
+    right: calc(50%-4px);
+}
+.hourHand{
+    width: 5px;
+    height: 100px;
+    background-color: white;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    top: 150px;
+    left: 245px;
+    z-index: 10;
+    transform: rotate(150deg);
+    /* animation: hourMove 43200s linear infinite; */
+    outline: 100px solid transparent;
+    position: absolute;
+}
+@keyframes hourMove{
+    0%{
+        transform: rotate(150deg);
+    }
+    100%{
+        transform: rotate(510deg);
+    }
+}
+.minuteHand{
+    width: 3px;
+    height: 150px;
+    background-color: white;
+    transform-origin: bottom center;
+    border-radius: 8px;
+    top: 100px;
+    left: 247px;
+    position: absolute;
+    transform: rotate(0);
+    /* animation: minMove 3600s linear infinite; */
+    outline: 100px solid transparent;
+
+
+}
+@keyframes minMove{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.sechand{
+    width: 1px;
+    height: 200px;
+    background-color: white;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    top: -100px;
+    left: 4px;
+    position: absolute;
+    transform: rotate(0);
+    position: relative;
+    outline: 100px solid transparent;
+    transition: all 0,06s;
+
+}
+.sec{
+    position: absolute;
+    z-index: 30;
+    /* animation: secMove 60s normal infinite steps(60,end) */
+}
+@keyframes secMove{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.clock ul{
+    padding: 0;
+    list-style: none;
+}
+.clock ul li{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    font-size: 20px;
+    columns: #000;
+}
+.clock ul li:nth-child(1){
+    right: 50%;
+    top: 0%;
+}
+.clock ul li:nth-child(2){
+    right: 0%;
+    top: 50%;
+    
+}
+.clock ul li:nth-child(3){
+    right: 50%;
+    top: 95%;
+}
+.clock ul li:nth-child(4){
+    right: 95%;
+    top: 50%;
+}
